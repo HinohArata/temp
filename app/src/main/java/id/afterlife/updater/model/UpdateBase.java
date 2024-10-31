@@ -20,6 +20,7 @@ public class UpdateBase implements UpdateBaseInfo {
     private String mName;
     private String mDownloadUrl;
     private String mDownloadId;
+    private String mDownloadKey;
     private long mTimestamp;
     private String mType;
     private String mVersion;
@@ -32,6 +33,7 @@ public class UpdateBase implements UpdateBaseInfo {
         mName = update.getName();
         mDownloadUrl = update.getDownloadUrl();
         mDownloadId = update.getDownloadId();
+        mDownloadKey = update.getDownloadKey();
         mTimestamp = update.getTimestamp();
         mType = update.getType();
         mVersion = update.getVersion();
@@ -54,6 +56,15 @@ public class UpdateBase implements UpdateBaseInfo {
 
     public void setDownloadId(String downloadId) {
         mDownloadId = downloadId;
+    }
+
+    @Override
+    public String getDownloadKey() {
+        return mDownloadKey;
+    }
+
+    public void setDownloadKey(String downloadKey) {
+        mDownloadKey = downloadKey
     }
 
     @Override

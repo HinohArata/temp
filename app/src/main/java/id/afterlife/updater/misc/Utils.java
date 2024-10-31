@@ -90,6 +90,7 @@ public class Utils {
         update.setDownloadId(object.getString("md5"));
         update.setFileSize(object.getLong("size"));
         update.setDownloadUrl(object.getString("download"));
+        update.setDownloadKey(object.getString("key"));
         update.setVersion(object.getString("version"));
         return update;
     }

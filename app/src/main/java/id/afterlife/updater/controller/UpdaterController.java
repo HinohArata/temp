@@ -373,9 +373,11 @@ public class UpdaterController {
         }
         update.setFile(destination);
         DownloadClient downloadClient;
+        String fileKey = update.getDownloadKey();
+        String fileUrl = "https://pixeldrain.com/api/file/" + fileKey + "?download";
         try {
             downloadClient = new DownloadClient.Builder()
-                    .setUrl(update.getDownloadUrl())
+                    .setUrl(fileUrl)
                     .setDestination(update.getFile())
                     .setDownloadCallback(getDownloadCallback(downloadId))
                     .setProgressListener(getProgressListener(downloadId))
