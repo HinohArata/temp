@@ -64,7 +64,7 @@ public class UpdateBase implements UpdateBaseInfo {
     }
 
     public void setDownloadKey(String downloadKey) {
-        mDownloadKey = downloadKey
+        mDownloadKey = downloadKey;
     }
 
     @Override
