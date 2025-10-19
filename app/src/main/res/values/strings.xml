@@ -162,4 +162,7 @@
     <string name="local_update_import_failure">Failed to import local update</string>
     <string name="local_update_import_install">Install</string>
     <string name="local_update_name">Local update</string>
+
+    <string name="error_opening_url">Failed to open the download link. Please try again.</string>
+    <string name="error_no_url">Download link is not available.</string>
 </resources>

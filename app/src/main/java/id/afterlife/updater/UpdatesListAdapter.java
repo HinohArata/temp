@@ -360,7 +360,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             case DOWNLOAD:
                 button.setText(R.string.action_download);
                 button.setEnabled(enabled);
-                clickListener = enabled ? view -> startDownloadWithWarning(downloadId) : null;
+                clickListener = enabled ? view -> openDownloadUrl(downloadId) : null;
                 break;
             case PAUSE:
                 button.setText(R.string.action_pause);
@@ -608,5 +608,27 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 mActivity.getResources().getInteger(R.integer.battery_ok_percentage_charging) :
                 mActivity.getResources().getInteger(R.integer.battery_ok_percentage_discharging);
         return percent >= required;
+    }
+
+    private void openDownloadUrl(String downloadId) {
+        UpdateInfo update = mUpdaterController.getUpdate(downloadId);
+        if (update != null && update.getDownloadUrl() != null) {
+            try {
+                Uri uri = Uri.parse(update.getDownloadUrl());  // Parse URL dari UpdateInfo
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_NEW_DOCUMENT);  // Buka di tab baru
+                mActivity.startActivity(intent);  // Mulai activity untuk membuka URL
+            } catch (Exception e) {
+                Log.e(TAG, "Gagal membuka URL: " + e.getMessage());
+                // Opsional: Tampilkan pesan error ke pengguna
+                Snackbar.make(mActivity.findViewById(android.R.id.content), 
+                              R.string.error_opening_url, Snackbar.LENGTH_LONG).show();
+            }
+        } else {
+            Log.e(TAG, "URL download tidak tersedia untuk ID: " + downloadId);
+            // Opsional: Tampilkan pesan bahwa URL tidak ditemukan
+            Snackbar.make(mActivity.findViewById(android.R.id.content), 
+                          R.string.error_no_url, Snackbar.LENGTH_LONG).show();
+        }
     }
 }
