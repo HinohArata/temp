@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.CollapsingToolbar.Settings" parent="@style/Theme.MaterialComponents.DayNight">
+        <item name="colorAccent">@color/settingslib_materialColorPrimaryFixed</item>
+        <item name="colorPrimary">@color/settingslib_materialColorOnSurfaceInverse</item>
+        <item name="elevationOverlayColor">?attr/colorPrimary</item>
+        <item name="elevationOverlayEnabled">true</item>
+    </style>
+</resources>

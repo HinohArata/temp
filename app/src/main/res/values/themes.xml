@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.CollapsingToolbar.Settings" parent="@style/Theme.MaterialComponents.DayNight">
+        <item name="colorAccent">@color/settingslib_materialColorPrimary</item>
+        <item name="colorPrimary">@color/settingslib_materialColorOnSurfaceInverse</item>
+        <item name="elevationOverlayColor">?attr/colorPrimary</item>
+        <item name="elevationOverlayEnabled">true</item>
+    </style>
+    <style name="CollapsingToolbarTitle.Collapsed" parent="@android:style/TextAppearance.DeviceDefault.Widget.ActionBar.Title">
+        <item name="android:textSize">20.0dip</item>
+        <item name="android:fontFamily">@string/settingslib_config_headlineFontFamily</item>
+    </style>
+    <style name="CollapsingToolbarTitle.Expanded" parent="@style/CollapsingToolbarTitle.Collapsed">
+        <item name="android:textSize">36.0dip</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+</resources>

@@ -16,4 +16,11 @@
 -->
 <resources>
     <bool name="config_hideRecoveryUpdate">false</bool>
+    <string name="settingslib_config_headlineFontFamily">@*android:string/config_headlineFontFamily</string>
+    <color name="settingslib_materialColorPrimary">@android:color/system_primary_light</color>
+    <color name="settingslib_materialColorOnSurfaceInverse">@android:color/system_on_surface_dark</color>
+    <color name="settingslib_materialColorPrimaryFixed">@android:color/system_primary_fixed</color>
+    <dimen name="expanded_title_margin_end">24.0dip</dimen>
+    <dimen name="expanded_title_margin_start">24.0dip</dimen>
+    <dimen name="settingslib_scrim_visible_height_trigger">137.0dip</dimen>
 </resources>
