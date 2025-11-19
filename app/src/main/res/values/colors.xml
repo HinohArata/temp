@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="theme_primary">#f5f5f5</color>
+    <color name="theme_primary_dark">#e0e0e0</color>
+    <color name="theme_accent">@*android:color/accent_device_default_light</color>
+    <color name="background">@android:color/system_neutral1_50</color>
+    <color name="toolbar_collapsed">@android:color/system_neutral1_100</color>
+    <color name="tv_background">#FF0E0E0F</color>
+    <color name="tv_card_background">#222222</color>
+
+    <color name="inverted">#212121</color>
+    <color name="ic_background">#333333</color>
+
+    <color name="settingslib_primary_device_default_settings_light">@android:color/system_neutral1_50</color>
+    <color name="settingslib_accent_device_default_light">@android:color/system_accent1_600</color>
+    <color name="settingslib_primary_dark_device_default_settings">@android:color/system_neutral1_900</color>
+    <color name="settingslib_accent_device_default_dark">@android:color/system_accent1_100</color>
+</resources>
