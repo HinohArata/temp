@@ -50,4 +50,3 @@
 - surya: MiuiCamera: Included Leica Camera
 - surya: Play integrity should passed by default
 - surya: Firmware Already included
----
