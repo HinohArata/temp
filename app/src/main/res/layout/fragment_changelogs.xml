@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/windowBackground"
+    android:padding="16dp">
+
+    <!-- 
+         1. layout_height="wrap_content": Tinggi menyesuaikan isi.
+         2. app:layout_constrainedHeight="true": Ini KUNCINYA. 
+            Ini memaksa wrap_content untuk tetap patuh pada constraint (batas) bawah.
+         3. layout_marginBottom="100dp": Memberi ruang untuk Floating Navbar di bawah.
+         4. verticalBias="0.0": Memaksa card nempel di atas (tidak di tengah) saat konten sedikit.
+    -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_changelog_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.MaterialComponents.DayNight"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="?android:attr/colorBackgroundFloating"
+        app:strokeWidth="1dp"
+        app:strokeColor="#33808080"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginBottom="100dp">
+
+        <!-- ScrollView dipindah ke DALAM Card -->
+        <!-- Scrollbar hanya akan muncul di dalam kotak ini -->
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            android:fadeScrollbars="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Latest Changes"
+                    android:textAllCaps="true"
+                    android:textSize="12sp"
+                    android:letterSpacing="0.1"
+                    android:textStyle="bold"
+                    android:textColor="?android:attr/colorAccent"
+                    android:layout_marginBottom="12dp"/>
+
+                <ProgressBar
+                    android:id="@+id/loading_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:indeterminateTint="?android:attr/colorAccent"
+                    android:visibility="visible"
+                    android:elevation="10dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/changelog_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:lineSpacingMultiplier="1.2"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="14sp"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Loading Indicator -->
+    <!-- Constraint Top/Bottom/Start/End ke parent membuatnya TEPAT di tengah layar -->
+    <!-- Elevation tinggi agar muncul di atas Card jika Card sudah ter-load sebagian -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -70,6 +70,7 @@ dependencies {
     implementation("androidx.preference:preference:1.2.0")
     implementation("androidx.recyclerview:recyclerview:1.2.1")
     implementation("com.google.android.material:material:1.9.0-alpha01")
+    implementation("io.noties.markwon:core:4.6.2")
 }
 
 configure<GenerateBpPluginExtension> {

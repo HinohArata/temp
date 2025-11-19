@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -155,10 +155,18 @@ public class Utils {
         return context.getString(R.string.blocked_update_info_url, device);
     }
 
+    // Ini URL untuk "View in Browser"
     public static String getChangelogURL(Context context) {
         String device = SystemProperties.get(Constants.PROP_NEXT_DEVICE,
                 SystemProperties.get(Constants.PROP_DEVICE));
         return context.getString(R.string.menu_changelog_url, device);
+    }
+
+    public static String getChangelogRawURL(Context context) {
+        String device = SystemProperties.get(Constants.PROP_NEXT_DEVICE,
+                SystemProperties.get(Constants.PROP_DEVICE));
+        String rawUrl = context.getString(R.string.changelog_md_url);
+        return rawUrl.replace("{codename}", device);
     }
 
     public static void triggerUpdate(Context context, String downloadId) {

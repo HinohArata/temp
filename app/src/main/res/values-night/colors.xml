@@ -7,4 +7,7 @@
     <color name="toolbar_collapsed">@android:color/system_neutral1_700</color>
 
     <color name="inverted">#f5f5f5</color>
+
+    <color name="snackbar_background_floating">#323232</color>
+    <color name="snackbar_text_color">#ffffff</color>
 </resources>
