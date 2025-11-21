@@ -29,4 +29,12 @@ public final class BuildInfoUtils {
     public static String getBuildVersion() {
         return SystemProperties.get(Constants.PROP_BUILD_VERSION);
     }
+
+    public static String getReleaseType() {
+        return SystemProperties.get(Constants.PROP_RELEASE_TYPE);
+    }
+
+    public static String getAterlifeVersion() {
+        return SystemProperties.get(Constants.PROP_BUILD_CODENAME);
+    }
 }

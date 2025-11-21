@@ -1,0 +1,15 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="24dp"
+android:height="24dp"
+android:viewportWidth="24.0"
+android:viewportHeight="24.0">
+<path android:fillAlpha="1.0" android:strokeLineCap="round"  android:strokeColor="@android:color/transparent" android:strokeMiterLimit="1.03" android:strokeAlpha="0.0"  android:fillColor="#00b1b7" android:strokeLineJoin="round"  android:strokeWidth="1.03"
+android:pathData="M12.73,1.23C16.15,4.44,19.84,6.3,23.59,7.75C22.11,9.48,20.88,11.28,19.45,13.82C16.8,10.62,14.27,7.07,12.72,1.25"/>
+<path android:fillAlpha="1.0" android:strokeLineCap="round"  android:strokeColor="@android:color/transparent" android:strokeMiterLimit="1.03" android:strokeAlpha="0.0"  android:fillColor="#00b1b7" android:strokeLineJoin="round"  android:strokeWidth="1.03"
+android:pathData="M11.12,1.2C7.7,4.4,4.01,6.26,0.26,7.71C1.74,9.45,2.97,11.25,4.4,13.79C7.05,10.58,9.58,7.03,11.13,1.22"/>
+<path android:fillAlpha="1.0" android:strokeLineCap="round"  android:strokeColor="@android:color/transparent" android:strokeMiterLimit="1.03" android:strokeAlpha="0.0"  android:fillColor="#006466" android:strokeLineJoin="round"  android:strokeWidth="1.03"
+android:pathData="M15.33,10.35C17.2,14.07,19.59,16.64,21.84,18.69L15.32,18.73"/>
+<path android:fillAlpha="1.0" android:strokeLineCap="round"  android:strokeColor="@android:color/transparent" android:strokeMiterLimit="1.03" android:strokeAlpha="0.0"  android:fillColor="#006466" android:strokeLineJoin="round"  android:strokeWidth="1.03"
+android:pathData="M8.57,10.33C6.69,14.05,4.31,16.62,2.05,18.66L8.57,18.71"/>
+<path android:fillAlpha="1.0" android:strokeLineCap="round"  android:strokeColor="@android:color/transparent" android:strokeMiterLimit="1.03" android:strokeAlpha="0.0"  android:fillColor="#006466" android:strokeLineJoin="round"  android:strokeWidth="1.03"
+android:pathData="M11.96,7.18C12.56,12.14,13.73,15.09,15.33,18.68C14.2,19.95,13.17,21.35,11.94,23.16C10.81,21.46,9.91,20.16,8.51,18.64C9.7,15.94,11.16,12.93,11.97,7.18"/>
+</vector>

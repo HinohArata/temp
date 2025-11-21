@@ -30,7 +30,9 @@
         Optional placeholders replaced at runtime:
           {device} - Device name
     -->
-    <string name="updater_server_url" translatable="false">https://raw.githubusercontent.com/AfterlifeOS/device_afterlife_ota/16/{device}/updates.json</string>
+    <string name="updater_server_url" translatable="false">https://raw.githubusercontent.com/HinohArata/device_afterlife_ota/16/{device}/updates.json</string>
+
+    <string name="changelog_md_url">https://raw.githubusercontent.com/HinohArata/device_afterlife_ota/refs/heads/16/{codename}/changelog.md</string>
 
     <string name="verification_failed_notification">Verification failed</string>
     <string name="verifying_download_notification">Verifying update</string>
@@ -88,7 +90,9 @@
 
     <string name="snack_update_not_installable">This update can\'t be installed on top of the current build.</string>
 
-    <string name="header_title_text">AfterlifeOS\n%1$s</string>
+    <string name="header_title_text">AfterlifeOS</string>
+    <string name="header_title_reltype">Release: %1$s</string>
+    <string name="header_afterlife_version">Version: %1$s %2$s</string>
     <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
     <string name="header_last_updates_check">Last checked: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
 

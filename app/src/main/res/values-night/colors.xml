@@ -8,5 +8,9 @@
 
     <color name="inverted">#f5f5f5</color>
 
+    <color name="snackbar_background_floating">#323232</color>
+    <color name="snackbar_text_color">#ffffff</color>
+    <color name="list_update_item_bg">@android:color/system_neutral2_600</color>
+
     <color name="settingslib_materialColorOnSurfaceInverse">@android:color/system_on_surface_light</color>
 </resources>
