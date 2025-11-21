@@ -1,4 +1,3 @@
-import java.util.Properties
 import org.lineageos.generatebp.GenerateBpPlugin
 import org.lineageos.generatebp.GenerateBpPluginExtension
 import org.lineageos.generatebp.models.Module
@@ -22,22 +21,25 @@ buildscript {
     }
 }
 
-val keystorePropertiesFile = rootProject.file("keystore.properties")
-val keystoreProperties = Properties().apply {
-    if (keystorePropertiesFile.exists()) {
-        load(keystorePropertiesFile.inputStream())
-    }
-}
-
 android {
-    compileSdk = 33
+    namespace = "id.afterlife.updater"
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "id.afterlife.updater"
         minSdk = 30
-        targetSdk = 33
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
+    }
+
+    signingConfigs {
+        create("platform") {
+            storeFile = file("platform.jks")
+            storePassword = "android"
+            keyAlias = "key0"
+            keyPassword = "android"
+        }
     }
 
     buildTypes {
@@ -49,6 +51,7 @@ android {
                     "proguard-rules.pro"
                 )
             )
+            signingConfig = signingConfigs.getByName("platform")
         }
         getByName("debug") {
             // Append .dev to package name so we won't conflict with AOSP build.
@@ -64,36 +67,21 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-
-    signingConfigs {
-        create("release") {
-            (keystoreProperties["keyAlias"] as String?)?.let {
-                keyAlias = it
-            }
-            (keystoreProperties["keyPassword"] as String?)?.let {
-                keyPassword = it
-            }
-            (keystoreProperties["storeFile"] as String?)?.let {
-                storeFile = file(it)
-            }
-            (keystoreProperties["storePassword"] as String?)?.let {
-                storePassword = it
-            }
-        }
-    }
 }
 
 dependencies {
-    compileOnly(fileTree(mapOf("dir" to "../system_libs", "include" to listOf("*.jar"))))
+    compileOnly(fileTree(mapOf("dir" to "../system_libs", "include" to listOf("*.aar", "*.jar"))))
+    implementation(fileTree(mapOf("dir" to "../system_libs", "include" to listOf("*.aar"))))
 
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("androidx.core:core-ktx:1.17.0")
+    implementation("androidx.appcompat:appcompat:1.7.1")
     implementation("androidx.cardview:cardview:1.0.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.4")
     implementation("androidx.localbroadcastmanager:localbroadcastmanager:1.1.0")
-    implementation("androidx.preference:preference:1.2.0")
-    implementation("androidx.recyclerview:recyclerview:1.2.1")
-    implementation("com.google.android.material:material:1.9.0-alpha01")
+    implementation("androidx.preference:preference:1.2.1")
+    implementation("androidx.recyclerview:recyclerview:1.4.0")
+    implementation("com.google.android.material:material:1.13.0")
+    implementation("io.noties.markwon:core:4.6.2")
 }
 
 configure<GenerateBpPluginExtension> {
