@@ -161,6 +161,13 @@ public class Utils {
         return context.getString(R.string.menu_changelog_url, device);
     }
 
+    public static String getChangelogMdURL(Context context) {
+        String device = SystemProperties.get(Constants.PROP_NEXT_DEVICE,
+                SystemProperties.get(Constants.PROP_DEVICE));
+        String rawUrl = context.getString(R.string.changelog_md_url);
+        return rawUrl.replace("{codename}", device);
+    }
+
     public static void triggerUpdate(Context context, String downloadId) {
         final Intent intent = new Intent(context, UpdaterService.class);
         intent.setAction(UpdaterService.ACTION_INSTALL_UPDATE);

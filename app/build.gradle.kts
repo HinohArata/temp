@@ -70,8 +70,8 @@ android {
 }
 
 dependencies {
-    compileOnly(fileTree(mapOf("dir" to "../system_libs", "include" to listOf("*.aar", "*.jar"))))
-    implementation(fileTree(mapOf("dir" to "../system_libs", "include" to listOf("*.aar"))))
+    compileOnly(fileTree(mapOf("dir" to "../frameworks", "include" to listOf("*.jar"))))
+    implementation(fileTree(mapOf("dir" to "../system_libs", "include" to listOf("*.jar", "*.aar"))))
 
     implementation("androidx.core:core-ktx:1.17.0")
     implementation("androidx.appcompat:appcompat:1.7.1")
@@ -81,7 +81,7 @@ dependencies {
     implementation("androidx.preference:preference:1.2.1")
     implementation("androidx.recyclerview:recyclerview:1.4.0")
     implementation("com.google.android.material:material:1.13.0")
-    implementation("io.noties.markwon:core:4.6.2")
+//    implementation("io.noties.markwon:core:4.6.2")
 }
 
 configure<GenerateBpPluginExtension> {

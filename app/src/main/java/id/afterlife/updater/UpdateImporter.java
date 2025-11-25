@@ -6,7 +6,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -22,6 +22,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
+
+import androidx.fragment.app.Fragment;
 
 import org.json.JSONException;
 import id.afterlife.updater.controller.UpdaterController;
@@ -54,12 +56,19 @@ public class UpdateImporter {
     private static final String METADATA_TIMESTAMP_KEY = "post-timestamp=";
 
     private final Activity activity;
+    private Fragment fragment; // Tambahan variabel Fragment
     private final Callbacks callbacks;
 
     private Thread workingThread;
 
     public UpdateImporter(Activity activity, Callbacks callbacks) {
         this.activity = activity;
+        this.callbacks = callbacks;
+    }
+
+    public UpdateImporter(Fragment fragment, Callbacks callbacks) {
+        this.fragment = fragment;
+        this.activity = fragment.getActivity();
         this.callbacks = callbacks;
     }
 
@@ -74,7 +83,12 @@ public class UpdateImporter {
         final Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT)
                 .addCategory(Intent.CATEGORY_OPENABLE)
                 .setType(MIME_ZIP);
-        activity.startActivityForResult(intent, REQUEST_PICK);
+
+        if (fragment != null) {
+            fragment.startActivityForResult(intent, REQUEST_PICK);
+        } else {
+            activity.startActivityForResult(intent, REQUEST_PICK);
+        }
     }
 
     public boolean onResult(int requestCode, int resultCode, Intent data) {

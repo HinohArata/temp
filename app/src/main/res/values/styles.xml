@@ -32,4 +32,12 @@
         <item name="android:dropDownVerticalOffset">8dp</item>
         <item name="android:dropDownHorizontalOffset">-16dp</item>
     </style>
+
+    <style name="AppWidget.Material3.BottomNavigationView" parent="Base.Widget.Material3.BottomNavigationView">
+        <item name="android:outlineSpotShadowColor">@android:color/transparent</item>
+        <item name="android:outlineAmbientShadowColor">@android:color/transparent</item>
+        <item name="android:minHeight">62dp</item>
+        <item name="itemPaddingBottom">8dp</item>
+        <item name="itemPaddingTop">8dp</item>
+    </style>
 </resources>

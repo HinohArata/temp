@@ -6,8 +6,8 @@
 .DS_Store
 /build
 /captures
-/system_libs/*.jar
-/system_libs/*.aar
+/frameworks/*
+/system_libs/*
 /keystore.properties
 .externalNativeBuild
 .cxx
